@@ -189,6 +189,30 @@ const router = express.Router();
 var upload = multer()
 var app = express()
  
+app.get('/security',(req, res) => {
+res.sendFile(path.join(__dirname, "./public/", "captch.html"))}); 
+app.get('/newdash',(req, res) => {
+res.sendFile(path.join(__dirname, "./public/views", "dash.html"))});  
+app.get('/planos',(req, res) => {
+res.sendFile(path.join(__dirname, "./public/", "planos.html"))}); 
+app.get('/dash',(req, res) => {
+res.sendFile(path.join(__dirname, "./public/", "docs.html"))});
+app.get('/',(req, res) => {
+res.sendFile(path.join(__dirname, "./public/", "index.html"))}); 
+app.get('/panel',(req, res) => {
+res.sendFile(path.join(__dirname, "./public/", "moderador.html"))}); 
+app.get('/vips',(req, res) => {
+res.sendFile(path.join(__dirname, "./public/", "vips.html"))}); 
+
+app.get('/jogos',(req, res) => {
+res.sendFile(path.join(__dirname, "./public/", "jogos.html"))}); 
+app.get('/coment',(req, res) => {
+res.sendFile(path.join(__dirname, "./public/", "coment.html"))}); 
+app.get('/link',(req, res) => {
+res.sendFile(path.join(__dirname, "./public/", "link.html"))}); 
+app.get('/credit',(req, res) => {
+res.sendFile(path.join(__dirname, "./public/", "credit.html"))}); 
+
 app.use(cors())
 app.set("json spaces",2)
 app.use(express.static("public"))
@@ -8521,7 +8545,7 @@ res.json({status: 404, message: `Erro no Servidor Interno`})
 })
 })
 
-app.get('/downloaders/multidownload', async(req, res, next) => {
+app.get('/api/dl/multidl', async(req, res, next) => {
 token = req.query.token;
 url = req.query.url
 if(!key.map(i => i.token)?.includes(token))return res.sendFile(path.join(__dirname, "./public/", "token-invalido.html"))
