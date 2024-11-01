@@ -7799,7 +7799,7 @@ RegistrarUser(token, req);
   }
 })
 
- app.get('/downloaders/soundcloud', async(req, res, next) => {
+ app.get('/api/soundcloud', async(req, res, next) => {
  token = req.query.token;
  url = req.query.url
 if(!key.map(i => i.token)?.includes(token))return res.sendFile(path.join(__dirname, "./public/", "token-invalido.html"))
