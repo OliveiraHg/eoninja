@@ -7801,7 +7801,7 @@ RegistrarUser(token, req);
 
  app.get('/api/soundcloud', async(req, res, next) => {
  token = req.query.token;
- url = req.query.url
+// url = req.query.url
 if(!key.map(i => i.token)?.includes(token))return res.sendFile(path.join(__dirname, "./public/", "token-invalido.html"))
 if(key[key.map(i => i?.token)?.indexOf(token)]?.request <= 0) return res.json({message: "Parece que suas requisições acabaram, recarregue e comece a usar novamente sem interrupções."})
 if (!url) return res.json({ status : false,  message: "Coloque o parametro: url"})
